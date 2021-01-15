@@ -28,7 +28,7 @@ export const ShippingScreen = ({ history }) => {
             <h1>Shipping</h1>
             <Form onSubmit={submitHandler}>
             <Form.Group controlId='address'>
-            <Form.Label>Address</Form.Label>
+            <Form.Label>Address </Form.Label>
             <Form.Control
                 type='text'
                 placeholder='Enter addres'
@@ -47,7 +47,7 @@ export const ShippingScreen = ({ history }) => {
             ></Form.Control>
             </Form.Group>
             <Form.Group controlId='postalCode'>
-            <Form.Label>Postal code</Form.Label>
+            <Form.Label>Postal code </Form.Label>
             <Form.Control
                 type='text'
                 placeholder='Enter pastal code'
@@ -56,7 +56,7 @@ export const ShippingScreen = ({ history }) => {
             ></Form.Control>
             </Form.Group>
             <Form.Group controlId='country'>
-            <Form.Label>Country</Form.Label>
+            <Form.Label>Country </Form.Label>
             <Form.Control
                 type='text'
                 placeholder='Enter country'
@@ -64,7 +64,7 @@ export const ShippingScreen = ({ history }) => {
                 onChange={(e) => setCountry(e.target.value)}
             ></Form.Control>
             </Form.Group>
-            <Button type='submit' variant='primary'>Continue</Button>
+            <Button type='submit' variant='primary'>Continue </Button>
             </Form>
         </FormContainer>
     )
