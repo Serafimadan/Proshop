@@ -15,7 +15,7 @@ h3 {
   margin: 0.1rem;
 }
 .form-control {
-  padding: 0.8rem!important;
+  width: auto!important;
 }
 /* carousel */
 .carousel-item-next,
