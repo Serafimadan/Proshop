@@ -10,7 +10,9 @@ import Paginate from '../components/Paginate';
 import ProductCarusel from '../components/ProductCarusel';
 import Meta from '../components/Meta';
 
+
 const HomeScreen = ({match}) => {
+
     const keyword = match.params.keyword;
 
     const pageNumber = match.params.pageNumber || 1

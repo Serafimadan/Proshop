@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Container } from 'react-bootstrap';
 import Footer  from './components/Footer';
 import Header from './components/Header';
@@ -18,8 +18,18 @@ import UserEditScreen from './screens/UserEditScreen';
 import ProductListScreen from './screens/ProductListScreen';
 import ProductEditScreen from './screens/ProductEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
+import ReactGa from 'react-ga';
+
 
 function App() {
+  useEffect(() =>{
+    ReactGa.initialize('G-LS791RV89X');
+
+    // to report page view
+    ReactGa.pageview('/')
+    ReactGa.pageview('/page/:pageNumber')
+  }, [])
+
   return (
     <Router>
       <Header />
