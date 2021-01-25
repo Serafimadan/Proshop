@@ -23,11 +23,10 @@ import ReactGa from 'react-ga';
 
 function App() {
   useEffect(() =>{
-    ReactGa.initialize('G-LS791RV89X');
+    ReactGa.initialize('G-J9H3RB1X2D');
 
     // to report page view
     ReactGa.pageview('/')
-    ReactGa.pageview('/page/:pageNumber')
   }, [])
 
   return (
