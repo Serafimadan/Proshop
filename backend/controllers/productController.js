@@ -8,7 +8,16 @@ import asyncHandler from 'express-async-handler';
 const getProducts = asyncHandler( async(req, res) => {
     const pageSize = 2
     const page = Number(req.query.pageNumber) || 1
-
+    const { sorts } = req.query
+    const sortItems = {
+        BestRating: { type: "rating", order: -1 },
+        HighestPrice: { type: "price", order: -1 },
+        LowestPrice: { type: "price", order: 1 },
+        Newest: { type: "createdAt", order: -1 },
+    }
+    const sortType = sorts
+    ? [[sortItems[sorts].type, sortItems[sorts].order]]
+    : ""
     const keyword = req.query.keyword ? {
         name: {
             $regex: req.query.keyword,
@@ -18,6 +27,7 @@ const getProducts = asyncHandler( async(req, res) => {
 
     const count = await Product.countDocuments({ ...keyword })
     const products = await Product.find({ ...keyword })
+        .sort(sortType)
         .limit(pageSize)
         .skip(pageSize * (page - 1))
 
