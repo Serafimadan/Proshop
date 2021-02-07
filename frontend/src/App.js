@@ -18,15 +18,19 @@ import UserEditScreen from './screens/UserEditScreen';
 import ProductListScreen from './screens/ProductListScreen';
 import ProductEditScreen from './screens/ProductEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
-import ReactGa from 'react-ga';
-
-
-function App() {
-  useEffect(() =>{
-    ReactGa.initialize('G-J9H3RB1X2D');
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-188238670-1');
 
     // to report page view
-    ReactGa.pageview('/')
+    ReactGA.pageview(window.location.pathname + window.location.search);
+
+function App() {
+  
+  useEffect(() =>{
+    ReactGA.initialize('UA-188238670-1');
+
+    // to report page view
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }, [])
 
   return (
